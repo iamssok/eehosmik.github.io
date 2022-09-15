@@ -6,7 +6,7 @@ categories: [Javascript]
 ---
 
 ## Clipboard
-현재 페이지 주소나 특정 문자를 복사하기 위한 
+현재 페이지 주소나 특정 문자를 복사하기 위한_ 
 
 
 ```html
@@ -41,6 +41,6 @@ function clip(type){
 
 ## execCommand()
 
-### copy
+### copy :
 현재 선택 영역의 내용을 복사
 
