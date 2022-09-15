@@ -21,7 +21,7 @@ timezone: Asia/Seoul
 # jekyll-seo-tag settings › https://github.com/jekyll/jekyll-seo-tag/blob/master/docs/usage.md
 # ↓ --------------------------
 published: true
-title: Kimsohee                        # the main title
+title: *                        # the main title
 
 tagline: Hi! Hello World               # it will display as the sub-title
 
