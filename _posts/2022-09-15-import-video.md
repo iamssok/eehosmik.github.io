@@ -6,23 +6,17 @@ categories: [Javascript]
 ---
 
 ## Import Video
-썸네일 클릭에 따른 각각의 유튜브 영상 가져오기
+
 
 ```html
-<div class="video-wrap" style="display:block;">
-    <a href="javascript:;" data-video="lOQ-BXQhMRY"></a>
-    <div class="video-cont"></div>
-    <img src="images/youtube1.jpg" alt="우다희 CTA">
+<div class="video-wrap" data-video="lOQ-BXQhMRY" style="display:block;">
+    <img src="images/youtube1.jpg">
 </div>
-<div class="video-wrap">
-    <a href="javascript:;" data-video="o_wc-E_Acr8"></a>
-    <div class="video-cont"></div>
-    <img src="images/youtube2.jpg" alt="이주용 CTA">
+<div class="video-wrap" data-video="o_wc-E_Acr8">
+    <img src="images/youtube2.jpg">
 </div>
-<div class="video-wrap">
-    <a href="javascript:;" data-video="mqhrazJcbUc"></a>
-    <div class="video-cont"></div>
-    <img src="images/youtube3.jpg" alt="이원준 CTA">
+<div class="video-wrap" data-video="mqhrazJcbUc">
+    <img src="images/youtube3.jpg">
 </div>
 
 <div class="thumbnail">
@@ -34,17 +28,30 @@ categories: [Javascript]
 
 ```javascript 
 $(document).ready(function() {
-    $(".video-wrap a").click(function() {
-        $(".video-cont").addClass("reveal");
-        $(".video-cont").append("<div class='video'><iframe width='1024' height='540' src='https://youtube.com/embed/" + $(this).data("video") + "?rel=0&playsinline=0&autoplay=1&mute=1' allow='autoplay; encrypted-media' allowfullscreen></iframe></div>");
+    $(".video-wrap").click(function() {
+        $(this).append("<div class='video'><iframe width='1024' height='540'src='https://youtube.com/embed/" + $(this).data("video") + "?rel=0&playsinline=0&autoplay=1&mute=1' allow='autoplay; encrypted-media' allowfullscreen></iframe></div>");
     }),
     $(".thumbnail a").click(function() {
         var Element = $(this).index();	
         $(this).addClass("active").siblings().removeClass("active");
         $(".video-wrap").eq(Element).show().siblings(".video-wrap").hide();
-        $(".video-cont").removeClass("reveal");
-        $(".video-cont .video").remove();		
-        $(".fullCnt1").css("background","url(images/bg_cnt_01-" + Element + ".jpg)");
+        $(".video-wrap .video").remove();	
     });
 });
+```
+
+```html
+<div class="video-wrap2"><img src="images/youtube1.jpg"></div>
+
+<div class="thumbnail2">
+    <a href="javascript:;" onclick="popupVideoChange('lOQ-BXQhMRY');" class="thumb1 active"></a>
+    <a href="javascript:;" onclick="popupVideoChange('o_wc-E_Acr8');" class="thumb2"></a>
+    <a href="javascript:;" onclick="popupVideoChange('mqhrazJcbUc');" class="thumb3"></a>
+</div>
+```
+
+```javascript 
+function popupVideoChange(youtube_code){
+    $(".video-wrap2").append("<div class='video'><iframe width='1024' height='540' src='https://youtube.com/embed/" + youtube_code + "?rel=0&playsinline=0&autoplay=1&mute=1' allow='autoplay; encrypted-media' allowfullscreen></iframe></div>");
+}
 ```
