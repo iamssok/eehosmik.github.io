@@ -3,7 +3,7 @@ layout: post
 title:  Clipboard
 date:   2022-09-15 10:00:00 +0900
 categories: [Javascript] 
-tags: [javascript]
+tags: [Javascript]
 ---
 
 ## Clipboard
