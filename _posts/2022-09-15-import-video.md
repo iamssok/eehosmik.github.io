@@ -3,7 +3,7 @@ layout: post
 title:  Import Video
 date:   2022-09-15 14:00:00 +0900
 categories: [Javascript] 
-tags: [javascript]
+tags: [Javascript]
 ---
 
 ## Import Video
