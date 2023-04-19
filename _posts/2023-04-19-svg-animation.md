@@ -33,13 +33,14 @@ a:hover polyline {stroke-dashoffset:0;}
 ```
 
 <style>
-    .chk-wrap {position:absolute; top:400px; left:50%; width:200px; height:30px; margin-left:-100px;}
+    .chk-wrap {margin:50px auto; text-align:center;}
+    .chk-wrap i {display:none;}
 	.chk-wrap input {display:none;}
-	.chk-wrap svg {border:1px solid #333;}
-	.st0 {fill:#000; stroke:#fff; stroke-width:6px; stroke-miterlimit:10;}
-	.st1 {fill:none; stroke:#000; stroke-width:6px; stroke-miterlimit:10; stroke-dashoffset:0; stroke-dasharray:90;}
+	.chk-wrap svg {border:1px solid #ddd;}
+	.st0 {fill:#1b1b1e; stroke:#fff; stroke-width:6px; stroke-miterlimit:10;}
+	.st1 {fill:none; stroke:#1b1b1e; stroke-width:6px; stroke-miterlimit:10; stroke-dashoffset:0; stroke-dasharray:90;}
 	input:checked ~ label .st1 {stroke:#fff; animation:dash 0.3s linear alternate 1;}
-	label span {position:relative; top:-5px; margin-left:2px; color:#fff;}
+	label span {margin-left:2px; color:#fff;}
 	@keyframes dash {
 	  from {stroke-dashoffset:90;}
 	  to   {stroke-dashoffset:0;}
