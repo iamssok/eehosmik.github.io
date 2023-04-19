@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  svg animation
+title:  arccordion
 date:   2023-04-19 +0900
 categories: [Html]
 tags: [html]
@@ -25,8 +25,7 @@ tags: [html]
         <p>Removes some files or directories from your repository</p>
     </div>
 </div>
-<script>
-    /*
+<script>    
     $('.arcc_wrap').click(function(){
         $(this).toggleClass('on');
         if( $(this).hasClass('on') == true ){
@@ -42,8 +41,7 @@ tags: [html]
             $(this).children('.open').show();
             $(this).children('.close').hide();
         }
-    });
-    */
+    });    
 </script>
 
 ```css
