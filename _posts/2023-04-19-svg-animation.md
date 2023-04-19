@@ -40,7 +40,7 @@ a:hover polyline {stroke-dashoffset:0;}
 	.st0 {fill:#1b1b1e; stroke:#fff; stroke-width:6px; stroke-miterlimit:10;}
 	.st1 {fill:none; stroke:#1b1b1e; stroke-width:6px; stroke-miterlimit:10; stroke-dashoffset:0; stroke-dasharray:90;}
 	input:checked ~ label .st1 {stroke:#fff; animation:dash 0.3s linear alternate 1;}
-	label span {margin-left:2px; color:#fff;}
+	label span {position:relative; top:2px; margin-left:5px; color:#fff;}
 	@keyframes dash {
 	  from {stroke-dashoffset:90;}
 	  to   {stroke-dashoffset:0;}
