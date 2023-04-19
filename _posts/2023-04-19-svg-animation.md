@@ -9,7 +9,7 @@ tags: [css, animation]
 ## svg animation
 
 <style>
-    a.cls-a {display:block; width:400px; height:100px; background:url('/eehosmik.github.io/assets/img/btn-line.png') no-repeat; border-bottom:0 !important;}
+    a.cls-a {display:block; width:400px; height:100px; margin:50px auto; background:url('/eehosmik.github.io/assets/img/btn-line.png') no-repeat; border-bottom:0 !important;}
     a polyline {stroke-dasharray:1000; stroke-dashoffset:1000; transition:all .5s;}
     a:hover polyline {stroke-dashoffset:0;}
 </style>
