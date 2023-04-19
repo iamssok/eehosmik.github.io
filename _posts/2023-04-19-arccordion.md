@@ -45,14 +45,22 @@ tags: [html]
 </script>
 
 ```css
-a polyline {stroke-dasharray:1000; stroke-dashoffset:1000; transition:all .5s;}
-a:hover polyline {stroke-dashoffset:0;}
+.arcc_wrap a {position:relative; width:780px; height:50px; background:#eee; border-top:2px solid #fff; border-bottom:1xp solid #000;}
 ```
 
 ```html
-<a href="javascript:;" class="cls-a">
-    <svg width="400" height="100">  
-        <polyline points="200,0 0,0 0,100 400,100 400,0 200,0" style="fill:transparent;stroke:#93ebe6;stroke-width:20" />
-    </svg>
-</a>
+<div class="arcc_wrap">
+    <a href="javascript:;" class="open">Installing Dependencies</a>
+    <a href="javascript:;" class="close" style="display:none;">Customing Static Assets</a>
+    <div class="arcc_cont" style="display:none;">
+        <p>Before running for the first time, go to the root directory of your site, and install dependencies as follows</p>
+    </div>
+</div>
+<div class="arcc_wrap">
+    <a href="javascript:;" class="open">Customing Stylesheet</a>
+    <a href="javascript:;" class="close" style="display:none;">Running Local Server</a>
+    <div class="arcc_cont" style="display:none;">
+        <p>Removes some files or directories from your repository</p>
+    </div>
+</div>
 ```
