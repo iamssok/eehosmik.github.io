@@ -23,7 +23,7 @@ timezone: Asia/Seoul
 published: true
 title: Hey                             # the main title
 
-tagline: Hi! Hello World               # it will display as the sub-title
+tagline: Hi! Hello               # it will display as the sub-title
 
 description:                           # used by seo meta and the atom feed
   A minimal, responsive, and powerful Jekyll theme for presenting professional writing.
