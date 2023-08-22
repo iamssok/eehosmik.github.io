@@ -1,9 +1,9 @@
 ---
 layout: post
-title:  calculate
+title:  Calculate
 date:   2023-04-28 +0900
 categories: [Javascript]
-tags: [javascript, calc]
+tags: [javascript, Jquery, calc]
 ---
 
 

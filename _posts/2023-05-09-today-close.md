@@ -1,11 +1,13 @@
 ---
 layout: post
-title:  today close
+title:  Today close
 date:   2023-05-09 +0900
 categories: [Javascript]
 tags: [javascript]
 ---
 
+
+## 하루동안 열지 않기
 
 ```javascript
 function setCookie( name, value, expirehours ) {
