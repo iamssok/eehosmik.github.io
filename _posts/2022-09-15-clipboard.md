@@ -36,10 +36,10 @@ function clip(type){
 }
 ```
 
-## select()
+### select()
 `input text`나 `textarea`의 text field 내용을 선택
 
-## execCommand()
+### execCommand()
 
 ### copy :
 현재 선택 영역의 내용을 복사
