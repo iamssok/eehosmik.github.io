@@ -17,14 +17,7 @@ function Button({ text, boolean, fontSize = 12, onClick }) {
   return (
     <button 
       onClick={onClick}
-      style={{
-        padding: "10px 20px",
-        backgroundColor: "black",
-        border: 0,
-        color: "white",
-        fontSize: fontSize,
-        marginRight: boolean ? 5 : 0,
-      }}
+      style={{padding: "10px 20px", backgroundColor: "black", border: 0, color: "white", fontSize: fontSize, marginRight: boolean ? 5 : 0 }}
     >
     {text}
     </button>
