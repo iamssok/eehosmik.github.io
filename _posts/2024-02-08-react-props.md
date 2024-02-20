@@ -9,7 +9,7 @@ tags: [React, Props]
 
 ## ✨ Props
 
-- 컴포넌트에 데이터를 전달하고자 할 때 사용하며, 이렇게 전달된 값을 변수를 통해 참조할 수 있다.
+- 컴포넌트에 데이터를 전달하고자 할 때 사용하며, 이렇게 전달된 값은 변수를 통해 참조할 수 있다.
 - React에서 데이터의 흐름은 부모 컴포넌트에서 자식 컴포넌트로 전달되므로, props의 값은 해당 컴포넌트를 불러와 사용하는 부모 컴포넌트에서 설정할 수 있다.
 
 ```javascript
@@ -19,7 +19,13 @@ function Button({ text, boolean, fontSize = 12, onClick }) {
   return (
     <button 
       onClick={onClick}
-      style={/*{padding: "10px 20px", backgroundColor: "black", border: 0, color: "white", fontSize: fontSize, marginRight: boolean ? 5 : 0 }*/}
+      style={/*{
+        padding: "10px 20px", 
+        backgroundColor: "black", 
+        border: 0, 
+        color: "white", 
+        fontSize: fontSize, 
+        marginRight: boolean ? 5 : 0 }*/}
     >
     {text}
     </button>

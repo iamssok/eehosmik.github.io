@@ -11,10 +11,10 @@ tags: [React, State]
 
 ### ⚡ useState
 
+맨 처음 렌더링될 때 초기 상태 값을 인수로 전달 받고, 최신 상태를 유지하는 값과 그 값을 업데이트 하는 함수를 반환한다.
+
 > const [state, setState] = useState(initialState)
 {: .prompt-info }
-
-맨 처음 렌더링될 때 초기 상태 값을 인수로 전달 받고, 최신 상태를 유지하는 값과 그 값을 업데이트 하는 함수를 반환한다.
 
 ```javascript
 import { useState } from "react";
