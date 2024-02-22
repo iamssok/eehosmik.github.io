@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  React useEffect
+title:  React Router
 date:   2024-02-14 +0900
 categories: [React]
 tags: [React, React Router]
@@ -21,7 +21,7 @@ SPA 방식의 리액트에서 각각의 URL에 따라 선택된 페이지를 렌
 {: .prompt-info }
 
 ```javascript
-import { BrowserRouter, Switch, Route } from "react.router-dom";
+import { BrowserRouter, Switch, Route } from "react-router-dom";
 import Coins from "./routes/Coins";
 import Coin from "./routes/Coin";
 
@@ -33,4 +33,6 @@ function Router() {
     </Switch>
   </BrowserRoter>
 }
+
+export default Router;
 ```
