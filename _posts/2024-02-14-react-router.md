@@ -28,7 +28,7 @@ import Coin from "./routes/Coin";
 function Router() {
   return <BrowserRouter>
     <Switch>
-      <Route path="/:id"><Coin /></Route>
+      <Route path="/id"><Coin /></Route>
       <Route path="/"><Coins /></Route>
     </Switch>
   </BrowserRoter>
@@ -36,3 +36,10 @@ function Router() {
 
 export default Router;
 ```
+
+### ⚡ Link
+
+앱 내에서 다른 라우트로 이동하기 위한 컨포넌트이다. 이 컴포넌트를 사용하면 페이지를 새로 불러오는 것이 아닌 원하는 라우트를 랜더링 해준다.
+
+> <Link to="/id"></Link>
+{: .prompt-info }

@@ -26,10 +26,10 @@ function Router() {
 
 function App() {
   const params = useParams();
+  // /:id에서 id가 1이라면 { id : 1 } 
   // 파라미터 값을 변수에 저장, 해당 값은 객체 형태
   // 이때 객체 프로퍼티의 key는 Route에서 설정한 path parameter
   // value는 path parameter에 전달된 값
-  // /post/:id에서 id가 1이라면 { id : 1 } 
   return <h1>path parameter: {params.id}</h1>
   // 전달된 파라미터 값을 페이지에 활용
 }
