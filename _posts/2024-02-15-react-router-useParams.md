@@ -9,7 +9,7 @@ tags: [React, React Router, useParams]
 
 ## ✨ useParams
 
-- react-router-dom에서 제공하는 Hook중 하나로 파라미터 값을 넘겨받아 페이지에서 사용할 수 있다.
+- react-router-dom에서 제공하는 Hook으로 파라미터 값을 넘겨받을 수 있다.
 
 ```javascript
 import { BrowserRouter, Switch, Route } from "react-router-dom";

@@ -12,8 +12,6 @@ tags: [React, useEffect]
 - 컴포넌트가 렌더링 될 때마다 특정 작업을 실행할 수 있도록 하는 Hook이다.
 - function: 수행하고자 하는 작업
 - deps: 배열 형태이며, 검사하고자 하는 특정값 또는 빈 배열을 넣는다.
-- useEffect의 첫번째 인수는 setup 함수이며, 이 함수는 컴포넌트가 렌더링된 이후에 호출된다. setup 함수는 setup 코드를 통해 외부 시스템과 연결하고, 해당 시스템의 연결을 종료할 수 있는 cleanup 함수(정리함수)를 반환한다.
-- 두번째 인수는 종속성 배열로 사이드 이펙트가 의존하는 모든 값을 포함하고 있는 배열이다. 
 
 > useEffect(function, [dependencies?])
 {: .prompt-info }
