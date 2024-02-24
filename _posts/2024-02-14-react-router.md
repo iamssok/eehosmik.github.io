@@ -9,16 +9,9 @@ tags: [React, React Router]
 
 ## ✨ React Router
 
-### ⚡ Routing
-
-사용자가 요청한 링크주소 즉, URL에 맞는 페이지를 찾아서 보여주는 것이라고 할 수 있다.
-
-### ⚡ React Router
-
 SPA 방식의 리액트에서 각각의 URL에 따라 선택된 페이지를 렌더링 해주는 라이브러리이다.
 
-> npm i react-router-dom@5.3.0
-{: .prompt-info }
+> 사용자가 요청한 URL에 맞는 페이지를 찾아서 보여주는 것을 `라우팅(Routing)`이라고 한다.
 
 ```javascript
 import { BrowserRouter, Switch, Route } from "react-router-dom";
@@ -41,5 +34,6 @@ export default Router;
 
 앱 내에서 다른 라우트로 이동하기 위한 컨포넌트이다. 이 컴포넌트를 사용하면 페이지를 새로 불러오는 것이 아닌 원하는 라우트를 랜더링 해준다.
 
-> <Link to="/id"></Link>
-{: .prompt-info }
+```javascript
+<Link to="/id"></Link>
+```

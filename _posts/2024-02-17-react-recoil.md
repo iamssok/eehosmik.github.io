@@ -9,11 +9,11 @@ tags: [React, Recoil]
 
 ## ✨ Recoil
 
-Reacr를 위한 상태관리 라이브러리
+React를 위한 상태관리 라이브러리
 
 ### ⚡ useRecoliValue
 
-컴포넌트에서 상태를 읽어오기만 하면될 때 사용하는 hook.
+컴포넌트에서 상태를 읽어오기만 하면될 때 사용한다.
 
 ```javascript
 import { atom, useRecoilValue } from "recoil";
@@ -34,7 +34,7 @@ export default App;
 
 ### ⚡ useSetRecoilState
 
-상태를 변경할 때 사용하는 hook. 
+상태를 변경할 때 사용한다.
 
 ```javascript
 import { atom, useSetRecoilState } from "recoil";

@@ -9,9 +9,9 @@ tags: [React, useEffect]
 
 ## ✨ useEffect
 
-- 컴포넌트가 렌더링 될 때마다 특정 작업을 실행할 수 있도록 하는 Hook이다.
-- function: 수행하고자 하는 작업
-- deps: 배열 형태이며, 검사하고자 하는 특정값 또는 빈 배열을 넣는다.
+- 컴포넌트가 렌더링 될 때마다 특정 작업을 실행한다.
+- function: 해당 값이 업데이트 될 때 수행하고자 하는 함수
+- deps: 배열 형태이며, 검사하고자 하는 특정값 또는 빈 배열
 
 > useEffect(function, [dependencies?])
 {: .prompt-info }

@@ -1,15 +1,15 @@
 ---
 layout: post
-title:  React Router useParams
+title:  React Router Hooks
 date:   2024-02-15 +0900
 categories: [React]
-tags: [React, React Router, useParams]
+tags: [React, React Router, useParam, useLocation]
 ---
 
 
 ## ✨ useParams
 
-- react-router-dom에서 제공하는 Hook으로 파라미터 값을 넘겨받을 수 있다.
+- 파라미터 값을 넘겨받을 수 있다.
 
 ```javascript
 import { BrowserRouter, Switch, Route } from "react-router-dom";
@@ -36,3 +36,5 @@ function App() {
 
 export default App;
 ```
+
+## ✨ useLocation
