@@ -3,7 +3,7 @@ layout: post
 title:  React Router Hooks
 date:   2024-02-15 +0900
 categories: [React]
-tags: [React, React Router, useParam, useLocation, useRouteMatch]
+tags: [React, React Router, useParams, useLocation, useRouteMatch]
 ---
 
 

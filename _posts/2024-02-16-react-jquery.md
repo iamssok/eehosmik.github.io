@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  React Router Query
+title:  React Query
 date:   2024-02-16 +0900
 categories: [React]
 tags: [React, React Query]
