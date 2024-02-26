@@ -3,7 +3,7 @@ layout: post
 title:  React Router
 date:   2024-02-14 +0900
 categories: [React]
-tags: [React, "React Router"]
+tags: [React, react-router-dom]
 ---
 
 
