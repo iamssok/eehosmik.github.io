@@ -60,6 +60,7 @@ function Coins() {
     }>Coin Name</Link>
   </Coin>
 }
+// Link to {{}}
 export default Coins;
 ```
 
