@@ -20,12 +20,14 @@ import Coins from "./routes/Coins";
 import Coin from "./routes/Coin";
 
 function Router() {
-  return <BrowserRouter>
-    <Switch>
-      <Route path="/id"><Coin /></Route>
-      <Route path="/"><Coins /></Route>
-    </Switch>
-  </BrowserRoter>
+  return (
+    <BrowserRouter>
+      <Switch>
+        <Route path="/id"><Coin /></Route>
+        <Route path="/"><Coins /></Route>
+      </Switch>
+    </BrowserRoter>
+  );
 }
 export default Router;
 ```
@@ -44,7 +46,7 @@ function Coins() {
       pathname: "/id",
       state: { name: "name"}
     }}>Coin Name</Link>
-  )
+  );
 }
 export default Coins;
 ```
