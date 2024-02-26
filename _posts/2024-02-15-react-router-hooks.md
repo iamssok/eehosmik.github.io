@@ -12,7 +12,7 @@ tags: [React, React Router, useParams, useLocation, useRouteMatch]
 파라미터 값을 넘겨받을 수 있다.
 
 ```javascript
-import { BrowserRouter, Switch, Route, useParams } from "react-router-dom";
+import { BrowserRouter, Switch, Route } from "react-router-dom";
 import Coins from "./routes/Coins";
 import Coin from "./routes/Coin";
 
@@ -50,6 +50,8 @@ export default Coin;
 사용자가 현재 머물러 있는 페이지에 대한 정보를 알려준다.
 
 ```javascript
+import { Link } from "react-router-dom"
+
 function Coins() {
   return <Coin>  
     <Link to={{
@@ -58,6 +60,7 @@ function Coins() {
     }}>Coin Name</Link>
   </Coin>
 }
+export default Coins;
 ```
 
 ```javascript
@@ -67,6 +70,7 @@ function Coin() {
   const { state } = useLocation();  // name: "btc"
   return <h1>{state.name}</h1>
 }
+export default Coin;
 ```
 
 ## ✨ useRouteMatch

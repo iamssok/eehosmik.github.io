@@ -21,7 +21,7 @@ tags: [React, React Query]
 import { useQuery } from "react-query";
 
 function App() {
-  return <h1></h1>
+  return <></>
 }
 
 export default App;
