@@ -25,7 +25,7 @@ function App() {
   const onClick = () => setCounter(counter + 1);
   return (
     <div>
-      <h1>Total Clicks : {counter}<h1>
+      <h1>Total Clicks : {counter}</h1>
       <button onClick={onClick}>Click Me</button>
     </div>
   );
