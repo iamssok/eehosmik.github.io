@@ -34,6 +34,8 @@ function Router() {
         <Route path="/"><Coins /></Route>
       </Switch>
     </BrowserRoter>
+
+    <Link to={/:id}>Coin Name</Link>
   );
 }
 export default Router;
