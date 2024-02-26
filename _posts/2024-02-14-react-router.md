@@ -35,4 +35,18 @@ function Router() {
   );
 }
 export default Router;
+/*
+function Coins() { 
+  return(
+    <>
+      <Link to="/id"></Link>
+      <Link to={{
+        pathname: "/id",
+        state: { name: "name"},
+      }}>Coin Name</Link>
+    </>
+  );
+}
+export default Coins;
+*/
 ```
