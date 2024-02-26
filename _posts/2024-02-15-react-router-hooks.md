@@ -54,10 +54,7 @@ import { Link } from "react-router-dom"
 
 function Coins() {
   return <Coin>  
-    < to={{
-      pathname: `/${id}`,
-      state: { name: "btc" }
-    }}>Coin Name</>
+    <Link to={/:id}>Coin Name</Link>
   </Coin>
 }
 export default Coins;
