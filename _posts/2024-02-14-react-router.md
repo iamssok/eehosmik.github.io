@@ -35,9 +35,4 @@ function Router() {
   );
 }
 export default Router;
-
-<Link to={{
-  pathname: "/id",
-  state: { name: "name"},
-}}>Coin Name</Link>
 ```
