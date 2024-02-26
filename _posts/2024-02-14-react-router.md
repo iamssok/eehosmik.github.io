@@ -36,7 +36,6 @@ function Router() {
 }
 export default Router;
 
-<Link to="/id"></Link>
 <Link to={{
   pathname: "/id",
   state: { name: "name"},
