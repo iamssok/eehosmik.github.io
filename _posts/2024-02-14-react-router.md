@@ -38,18 +38,18 @@ export default Router;
 앱 내에서 다른 경로로 이동하기 위한 컴포넌트이다. 이 컴포넌트를 사용하면 페이지를 새로 불러오는 것이 아닌 원하는 Route를 렌더링 해준다.
 
 ```javascript
-/*
 import { Link } from "react-router-dom";
 
 function Coins() { 
   return(
-    <Link to="/id"></Link>
-    <Link to={{
-      pathname: "/id",
-      state: { name: "name"},
-    }}>Coin Name</Link>
+    <>
+      <Link to="/id"></Link>
+      <Link to={{
+        pathname: "/id",
+        state: { name: "name"},
+      }}>Coin Name</Link>
+    </>
   );
 }
 export default Coins;
-*/
 ```
