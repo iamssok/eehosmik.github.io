@@ -20,7 +20,7 @@ SPA 방식의 리액트에서 각각의 Route(경로)에 따라 선택된 페이
 앱 내에서 다른 경로로 이동하기 위한 컴포넌트이다. 이 컴포넌트를 사용하면 페이지를 새로 불러오는 것이 아닌 원하는 Route를 렌더링 해준다.
 
 ```javascript
-import { BrowserRouter, Switch, Route } from "react-router-dom";
+import { BrowserRouter, Switch, Route, Link } from "react-router-dom";
 import Coins from "./routes/Coins";
 import Coin from "./routes/Coin";
 
@@ -35,9 +35,7 @@ function Router() {
   );
 }
 export default Router;
-```
 
-```javascript
 function Coins() { 
   return(
     <>
