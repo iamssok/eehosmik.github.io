@@ -29,6 +29,7 @@ function Router() {
     </BrowserRoter>
   );
 }
+
 export default Router;
 ```
 
@@ -48,5 +49,6 @@ function Coins() {
     }}>Coin Name</Link>
   );
 }
+
 export default Coins;
 ```
