@@ -37,7 +37,7 @@ export default Router;
 ```javascript
 import { Link } from "react-router-dom";
 
-function Coins() {
+function Coins() { 
   return(
     <Link to="/id"></Link>
     <Link to={{
