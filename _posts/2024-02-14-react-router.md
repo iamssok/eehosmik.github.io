@@ -42,8 +42,8 @@ import { Link } from "react-router-dom";
 
 function Coins() { 
   return(
-    <Link to="/id"></Link>
     /*
+    <Link to="/id"></Link>
     <Link to={{
       pathname: "/id",
       state: { name: "name"},
