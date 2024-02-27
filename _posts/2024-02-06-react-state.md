@@ -1,10 +1,9 @@
 ---
 layout: post
-title:  React State
+title:  "[React] State"
 date:   2024-02-06 +0900
 categories: [React]
-tags: [React, State, useState]
-published: true
+tags: [react, state, useState]
 ---
 
 
@@ -12,7 +11,7 @@ published: true
 
 ### ⚡ useState
 
-맨 처음 렌더링될 때 초기 상태 값을 인수로 전달 받고, 최신 상태를 유지하는 값과 그 값을 업데이트 하는 함수를 반환한다.
+맨 처음 렌더링 될 때 초기 상태 값을 인수로 전달 받고, 최신 상태를 유지하는 값과 그 값을 업데이트 하는 함수를 반환한다.
 
 > const [state, setState] = useState(initialState)
 {: .prompt-info }

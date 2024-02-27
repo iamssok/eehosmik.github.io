@@ -1,9 +1,9 @@
 ---
 layout: post
-title:  React Router Hooks
+title:  "[React] React-Router-Dom Hooks"
 date:   2024-02-15 +0900
 categories: [React]
-tags: [React, React Router, useParams, useLocation, useRouteMatch]
+tags: [react, react-router-dom, useParams, useLocation, useRouteMatch]
 ---
 
 
@@ -39,8 +39,9 @@ function Coin() {
   // 동적 라우팅 값으로 걸어둔 이름으로 객체를 가져올 수 있다.
   const { id } = useParams();
   // 현재 주소의 값이 http://localhost:3000/1 이라면
-  console.log(id);  // "1"이 출력
+  console.log(id);
   return <h1>path parameter: {params.id}</h1>
+  // "1"이 출력
 }
 export default Coin;
 ```

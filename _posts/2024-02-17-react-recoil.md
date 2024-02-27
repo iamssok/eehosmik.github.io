@@ -1,9 +1,9 @@
 ---
 layout: post
-title:  React Recoil
+title:  "[React] Recoil"
 date:   2024-02-17 +0900
 categories: [React]
-tags: [React, Recoil]
+tags: [react, recoil]
 ---
 
 
@@ -28,7 +28,6 @@ function App() {
   console.log(isDark);  // true
   return null;
 }
-
 export default App;
 ```
 
@@ -49,6 +48,7 @@ function App() {
   const toggleDarkAtom = () => setDark(prev => !prev);
   return <button onClick={toggleDarkAtom}></button>
 }
-
 export default App;
 ```
+
+### ⚡ useRecoilState

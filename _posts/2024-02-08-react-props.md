@@ -1,9 +1,9 @@
 ---
 layout: post
-title:  React Props
+title:  "[React] Props"
 date:   2024-02-08 +0900
 categories: [React]
-tags: [React, Props]
+tags: [react, props]
 ---
 
 
