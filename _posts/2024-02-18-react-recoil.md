@@ -11,6 +11,28 @@ tags: [react, recoil, atom, useRecoilValue, useSetRecoilState, useRecoilState]
 
 React를 위한 상태관리 라이브러리
 
+### ⚡ useRecoilState
+
+상태를 읽고 변경할 때 사용한다.
+
+```javascript
+import { atom, useRecoilState } from "recoil";
+
+const modeThemeAtom = atom({
+  key: "modeTheme",
+  default: true,
+})
+
+function App() {
+  const [mode, setMode] = useRecoilState(modeThemeAtom);
+  const toggleModeAtom = () => setMode(prev => !prev);
+  return (
+    <button onClick={toggleModeAtom}>Mode Change</button>
+  )
+}
+export default App;
+```
+
 ### ⚡ useRecoliValue
 
 컴포넌트에서 상태를 읽어오기만 하면될 때 사용한다.
@@ -46,9 +68,7 @@ const modeThemeAtom = atom({
 function App() {
   const setMode = useSetRecoilState(modeThemeAtom);
   const toggleModeAtom = () => setMode(prev => !prev);
-  return <button onClick={toggleModeAtom}></button>
+  return <button onClick={toggleModeAtom}>Mode Change</button>
 }
 export default App;
 ```
-
-### ⚡ useRecoilState

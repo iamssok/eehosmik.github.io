@@ -11,8 +11,6 @@ tags: [react, react-hook-form]
 
 React 기반의 폼 관리 라이브러리로, 복잡한 폼을 간단하게 처리하고 상태 관리를 용이하게 해주는 도구이다.
 
-### ⚡ 
-
 ```javascript
 
 function App() {

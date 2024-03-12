@@ -3,7 +3,7 @@ layout: post
 title:  "[React] React-Query"
 date:   2024-02-16 +0900
 categories: [React]
-tags: [react, react-query, useQuery]
+tags: [react, react-query, useQuery, react-query-devtools]
 ---
 
  
