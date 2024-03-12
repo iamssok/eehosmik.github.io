@@ -34,7 +34,7 @@ function Coin() {
   // 파라미터 값을 변수에 저장, 해당 값은 객체 형태
   // 이때 객체 프로퍼티의 key는 Route에서 설정한 path parameter
   // value는 path parameter에 전달된 값
-  // /:id에서 id가 1이라면 { id : 1 } 
+  // /:id에서 id가 1이라면 { id : "1" } 
 
   // 동적 라우팅 값으로 걸어둔 이름으로 객체를 가져올 수 있다.
   const { id } = useParams();
@@ -76,3 +76,16 @@ export default Coin;
 ```
 
 ## ✨ useRouteMatch
+
+URL에 해당 파라미터 값이 있는지 확인한다.
+
+```javascript
+import { useRouteMatch } from "react-router-dom";
+
+function App() {
+  const Match = useRouteMatch("/:id");
+  console.log(Match); // true or false
+  return null;
+}
+export default App;
+```

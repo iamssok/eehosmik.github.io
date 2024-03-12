@@ -17,6 +17,9 @@ tags: [react, react-query, useQuery]
 
 ### ⚡ useQuery
 
+> const { isLoading, data } = useQuery(queryKey, queryFu)
+{: .prompt-info }
+
 ```javascript
 import { QueryClient, QueryClientProvider, useQuery } from "react-query";
 import { ReactQueryDevtools } from "react-query/devtools";

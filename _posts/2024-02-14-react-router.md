@@ -19,7 +19,7 @@ SPA 방식의 리액트에서 각각의 Route(경로)에 따라 선택된 페이
 
 ### ⚡ BrowserRouter or HashRouter
 
-react-router-dom의 라우터는 <BrowserRouter>와 <HashRouter> 두 가지가 있다. BrowserRouter는 HTML5의 history API를 활용하여 UI를 업데이트하고, HashRouter는 URL의 hash를 활용한 라우터이다. HashRouter는 정적인(static) 페이지에 적합하다. request와 response로 이루어지는 동적인 페이지를 제작할 때에는 BrowserRouter가 보편적으로 쓰인다.
+react-router-dom의 라우터는 `<BrowserRouter>`와 `<HashRouter>` 두 가지가 있다. BrowserRouter는 HTML5의 history API를 활용하여 UI를 업데이트하고, HashRouter는 URL의 hash를 활용한 라우터이다. HashRouter는 정적인(static) 페이지에 적합하다. request와 response로 이루어지는 동적인 페이지를 제작할 때에는 BrowserRouter가 보편적으로 쓰인다.
 
 ### ⚡ Route
 
@@ -47,7 +47,7 @@ function Router() {
       </Switch>
     </BrowserRoter>
 
-    <Link to={/:id}>Coin Name</Link>
+    <Link to={`/:id`}>Coin Name</Link>
   );
 }
 export default Router;

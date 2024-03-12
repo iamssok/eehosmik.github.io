@@ -1,9 +1,9 @@
 ---
 layout: post
 title:  "[React] Recoil"
-date:   2024-02-17 +0900
+date:   2024-02-18 +0900
 categories: [React]
-tags: [react, recoil]
+tags: [react, recoil, atom, useRecoilValue, useSetRecoilState, useRecoilState]
 ---
 
 
@@ -18,13 +18,13 @@ React를 위한 상태관리 라이브러리
 ```javascript
 import { atom, useRecoilValue } from "recoil";
 
-export const isDarkAtom = atom({
-  key: "isDark",
+const modeThemeAtom = atom({
+  key: "modeTheme",
   dafault: true,
 })
 
 function App() {
-  const isDark = useRecoilValue(isDarkAtom);
+  const modeTheme = useRecoilValue(modeThemeAtom);
   console.log(isDark);  // true
   return null;
 }
@@ -38,15 +38,15 @@ export default App;
 ```javascript
 import { atom, useSetRecoilState } from "recoil";
 
-export const isDarkAtom = atom({
-  key: "isDark",
+const modeThemeAtom = atom({
+  key: "modeTheme",
   dafault: true,
 })
 
 function App() {
-  const setDark = useSetRecoilState(isDarkAtom);
-  const toggleDarkAtom = () => setDark(prev => !prev);
-  return <button onClick={toggleDarkAtom}></button>
+  const setMode = useSetRecoilState(modeThemeAtom);
+  const toggleModeAtom = () => setMode(prev => !prev);
+  return <button onClick={toggleModeAtom}></button>
 }
 export default App;
 ```
