@@ -1,13 +1,13 @@
 ---
 layout: post
-title:  React Query
+title:  "[React] React-Query"
 date:   2024-02-16 +0900
 categories: [React]
-tags: [React, React Query]
+tags: [react, react-query, useQuery, react-query-devtools]
 ---
 
-
-## ✨ React Query
+ 
+## ✨ React-Query
 
 - 서버 상태를 불러오고, 캐싱하며, 지속적으로 동기화하고 업데이트 하는 작업을 도와주는 라이브러리
 - 기존의 복잡하고 장황한 코드가 필요한 데이터 불러오기 방식과 달리 컴포넌트 내부에서 간단하고 직관적으로 API를 사용할 수 있다.
@@ -17,12 +17,38 @@ tags: [React, React Query]
 
 ### ⚡ useQuery
 
+> const { isLoading, data } = useQuery(queryKey, queryFu)
+{: .prompt-info }
+
 ```javascript
-import { useQuery } from "react-query";
-
-function App() {
-  return <></>
+import { QueryClient, QueryClientProvider, useQuery } from "react-query";
+import { ReactQueryDevtools } from "react-query/devtools";
+ 
+const queryClient = new QueryClient()
+ 
+export default function App() {
+  return (
+    <QueryClientProvider client={queryClient}>
+      <Example />
+      <ReactQueryDevtools initialIsOpen={false} />
+    </QueryClientProvider>
+  )
 }
-
-export default App;
+ 
+function Example() {
+  const { isLoading, error, data } = useQuery('repoData', () =>
+    fetch('https://api.github.com/repos/tannerlinsley/react-query').then(res => res.json())
+  )
+  if (isLoading) return 'Loading...'
+  if (error) return 'An error has occurred: ' + error.message
+  return (
+    <div>
+      <h1>{data.name}</h1>
+      <p>{data.description}</p>
+      <strong>👀 {data.subscribers_count}</strong>{' '}
+      <strong>✨ {data.stargazers_count}</strong>{' '}
+      <strong>🍴 {data.forks_count}</strong>
+    </div>
+  )
+}
 ```

@@ -1,9 +1,9 @@
 ---
 layout: post
-title:  React useEffect
+title:  "[React] useEffect"
 date:   2024-02-09 +0900
 categories: [React]
-tags: [React, useEffect]
+tags: [react, useEffect]
 ---
 
 

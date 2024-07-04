@@ -1,9 +1,9 @@
 ---
 layout: post
-title:  Javascript ES6
+title:  "[Javascript] ES6"
 date:   2024-02-01 +0900
 categories: [Javascript]
-tags: [Javascript, ES6]
+tags: [javascript, es6]
 ---
 
 
