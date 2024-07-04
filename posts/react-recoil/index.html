@@ -1,0 +1,203 @@
+<!DOCTYPE html><html lang="ko" ><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"><meta name="generator" content="Jekyll v4.3.3" /><meta property="og:title" content="[React] Recoil" /><meta property="og:locale" content="ko" /><meta name="description" content="✨ Recoil" /><meta property="og:description" content="✨ Recoil" /><link rel="canonical" href="https://iamssok.github.io/eehosmik.github.io//eehosmik.github.io/posts/react-recoil/" /><meta property="og:url" content="https://iamssok.github.io/eehosmik.github.io//eehosmik.github.io/posts/react-recoil/" /><meta property="og:site_name" content="Hey" /><meta property="og:type" content="article" /><meta property="article:published_time" content="2024-02-18T00:00:00+09:00" /><meta name="twitter:card" content="summary" /><meta property="twitter:title" content="[React] Recoil" /> <script type="application/ld+json"> {"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2024-07-01T15:20:44+09:00","datePublished":"2024-02-18T00:00:00+09:00","description":"✨ Recoil","headline":"[React] Recoil","mainEntityOfPage":{"@type":"WebPage","@id":"https://iamssok.github.io/eehosmik.github.io//eehosmik.github.io/posts/react-recoil/"},"url":"https://iamssok.github.io/eehosmik.github.io//eehosmik.github.io/posts/react-recoil/"}</script><title>[React] Recoil | Hey</title><link rel="apple-touch-icon" sizes="180x180" href="/eehosmik.github.io/assets/img/favicons/apple-touch-icon.png"><link rel="icon" type="image/png" sizes="32x32" href="/eehosmik.github.io/assets/img/favicons/favicon-32x32.png"><link rel="icon" type="image/png" sizes="16x16" href="/eehosmik.github.io/assets/img/favicons/favicon-16x16.png"><link rel="manifest" href="/eehosmik.github.io/assets/img/favicons/site.webmanifest"><link rel="shortcut icon" href="/eehosmik.github.io/assets/img/favicons/favicon.ico"><meta name="apple-mobile-web-app-title" content="Hey"><meta name="application-name" content="Hey"><meta name="msapplication-TileColor" content="#da532c"><meta name="msapplication-config" content="/eehosmik.github.io/assets/img/favicons/browserconfig.xml"><meta name="theme-color" content="#ffffff"><link rel="preconnect" href="https://fonts.googleapis.com" ><link rel="dns-prefetch" href="https://fonts.googleapis.com" ><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="dns-prefetch" href="https://fonts.gstatic.com" crossorigin><link rel="preconnect" href="https://fonts.googleapis.com" ><link rel="dns-prefetch" href="https://fonts.googleapis.com" ><link rel="preconnect" href="https://cdn.jsdelivr.net" ><link rel="dns-prefetch" href="https://cdn.jsdelivr.net" ><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato&family=Source+Sans+Pro:wght@400;600;700;900&display=swap"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/css/bootstrap.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.11.2/css/all.min.css"><link rel="stylesheet" href="/eehosmik.github.io/assets/css/style.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/afeld/bootstrap-toc@1.0.1/dist/bootstrap-toc.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/magnific-popup@1/dist/magnific-popup.min.css"> <script src="https://cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script> <script type="text/javascript"> class ModeToggle { static get MODE_KEY() { return "mode"; } static get MODE_ATTR() { return "data-mode"; } static get DARK_MODE() { return "dark"; } static get LIGHT_MODE() { return "light"; } static get ID() { return "mode-toggle"; } constructor() { if (this.hasMode) { if (this.isDarkMode) { if (!this.isSysDarkPrefer) { this.setDark(); } } else { if (this.isSysDarkPrefer) { this.setLight(); } } } let self = this; /* always follow the system prefers */ this.sysDarkPrefers.addEventListener("change", () => { if (self.hasMode) { if (self.isDarkMode) { if (!self.isSysDarkPrefer) { self.setDark(); } } else { if (self.isSysDarkPrefer) { self.setLight(); } } self.clearMode(); } self.notify(); }); } /* constructor() */ get sysDarkPrefers() { return window.matchMedia("(prefers-color-scheme: dark)"); } get isSysDarkPrefer() { return this.sysDarkPrefers.matches; } get isDarkMode() { return this.mode === ModeToggle.DARK_MODE; } get isLightMode() { return this.mode === ModeToggle.LIGHT_MODE; } get hasMode() { return this.mode != null; } get mode() { return sessionStorage.getItem(ModeToggle.MODE_KEY); } /* get the current mode on screen */ get modeStatus() { if (this.isDarkMode || (!this.hasMode && this.isSysDarkPrefer)) { return ModeToggle.DARK_MODE; } else { return ModeToggle.LIGHT_MODE; } } setDark() { $('html').attr(ModeToggle.MODE_ATTR, ModeToggle.DARK_MODE); sessionStorage.setItem(ModeToggle.MODE_KEY, ModeToggle.DARK_MODE); } setLight() { $('html').attr(ModeToggle.MODE_ATTR, ModeToggle.LIGHT_MODE); sessionStorage.setItem(ModeToggle.MODE_KEY, ModeToggle.LIGHT_MODE); } clearMode() { $('html').removeAttr(ModeToggle.MODE_ATTR); sessionStorage.removeItem(ModeToggle.MODE_KEY); } /* Notify another plugins that the theme mode has changed */ notify() { window.postMessage({ direction: ModeToggle.ID, message: this.modeStatus }, "*"); } } /* ModeToggle */ const toggle = new ModeToggle(); function flipMode() { if (toggle.hasMode) { if (toggle.isSysDarkPrefer) { if (toggle.isLightMode) { toggle.clearMode(); } else { toggle.setLight(); } } else { if (toggle.isDarkMode) { toggle.clearMode(); } else { toggle.setDark(); } } } else { if (toggle.isSysDarkPrefer) { toggle.setLight(); } else { toggle.setDark(); } } toggle.notify(); } /* flipMode() */ </script><body data-spy="scroll" data-target="#toc" data-topbar-visible="true"><div id="sidebar" class="d-flex flex-column align-items-end"><div class="profile-wrapper text-center"><div id="avatar"> <a href="/eehosmik.github.io/" class="mx-auto"> <img src="https://raw.githubusercontent.com/cotes2020/chirpy-images/main/commons/avatar.jpg" alt="avatar" onerror="this.style.display='none'"> </a></div><div class="site-title mt-3"> <a href="/eehosmik.github.io/">Hey</a></div><div class="site-subtitle font-italic">Hi! Hello</div></div><ul class="w-100"><li class="nav-item"> <a href="/eehosmik.github.io/" class="nav-link"> <i class="fa-fw fas fa-home ml-xl-3 mr-xl-3 unloaded"></i> <span>HOME</span> </a><li class="nav-item"> <a href="/eehosmik.github.io/categories/" class="nav-link"> <i class="fa-fw fas fa-stream ml-xl-3 mr-xl-3 unloaded"></i> <span>CATEGORIES</span> </a><li class="nav-item"> <a href="/eehosmik.github.io/tags/" class="nav-link"> <i class="fa-fw fas fa-tag ml-xl-3 mr-xl-3 unloaded"></i> <span>TAGS</span> </a><li class="nav-item"> <a href="/eehosmik.github.io/archives/" class="nav-link"> <i class="fa-fw fas fa-archive ml-xl-3 mr-xl-3 unloaded"></i> <span>ARCHIVES</span> </a><li class="nav-item"> <a href="/eehosmik.github.io/about/" class="nav-link"> <i class="fa-fw fas fa-info-circle ml-xl-3 mr-xl-3 unloaded"></i> <span>ABOUT</span> </a></ul><div class="sidebar-bottom mt-auto d-flex flex-wrap justify-content-center align-items-center"> <button class="mode-toggle btn" aria-label="Switch Mode"> <i class="fas fa-adjust"></i> </button> <span class="icon-border"></span> <a href="https://github.com/iamssok" aria-label="github" target="_blank" rel="noopener"> <i class="fab fa-github"></i> </a> <a href="https://twitter.com/" aria-label="twitter" target="_blank" rel="noopener"> <i class="fab fa-twitter"></i> </a> <a href=" javascript:location.href = 'mailto:' + ['iamssok','naver.com'].join('@')" aria-label="email" > <i class="fas fa-envelope"></i> </a> <a href="/eehosmik.github.io/feed.xml" aria-label="rss" > <i class="fas fa-rss"></i> </a></div></div><div id="topbar-wrapper"><div id="topbar" class="container d-flex align-items-center justify-content-between h-100 pl-3 pr-3 pl-md-4 pr-md-4"> <span id="breadcrumb"> <span> <a href="/eehosmik.github.io/"> Home </a> </span> <span>[React] Recoil</span> </span> <i id="sidebar-trigger" class="fas fa-bars fa-fw"></i><div id="topbar-title"> Post</div><i id="search-trigger" class="fas fa-search fa-fw"></i> <span id="search-wrapper" class="align-items-center"> <i class="fas fa-search fa-fw"></i> <input class="form-control" id="search-input" type="search" aria-label="search" autocomplete="off" placeholder="Search..."> </span> <span id="search-cancel" >Cancel</span></div></div><div id="main-wrapper" class="d-flex justify-content-center"><div id="main" class="container pl-xl-4 pr-xl-4"><div class="row"><div id="core-wrapper" class="col-12 col-lg-11 col-xl-9 pr-xl-4 pb-5"><div class="post pl-1 pr-1 pl-md-2 pr-md-2"><h1 data-toc-skip>[React] Recoil</h1><div class="post-meta text-muted"> <span> Posted <em class="" data-ts="1708182000" data-df="ll" data-toggle="tooltip" data-placement="bottom"> Feb 18, 2024 </em> </span> <span> Updated <em class="" data-ts="1719814844" data-df="ll" data-toggle="tooltip" data-placement="bottom"> Jul 1, 2024 </em> </span><div class="d-flex justify-content-between"> <span> By <em> <a href="https://github.com/iamssok">Kimsohee</a> </em> </span><div> <span class="readtime" data-toggle="tooltip" data-placement="bottom" title="838 words"> <em>4 min</em> read</span></div></div></div><div class="post-content"><h2 id="-recoil"><span class="mr-2">✨ Recoil</span><a href="#-recoil" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h2><p>React를 위한 상태관리 라이브러리</p><h3 id="-recoilroot"><span class="mr-2">⚡ RecoilRoot</span><a href="#-recoilroot" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3><p>recoil을 사용하기 위해서는 사용하고자 하는 부모 컴포넌트에 <code class="language-plaintext highlighter-rouge">&lt;RecoilRoot&gt;</code>를 사용해야 한다. 보통 전역적으로 사용하기 때문에 루트 컴포넌트에 넣으면 좋다.</p><div class="language-javascript highlighter-rouge"><div class="code-header"> <span data-label-text="JavaScript"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+</pre><td class="rouge-code"><pre><span class="c1">// index.tsx</span>
+<span class="k">import</span> <span class="nx">React</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">react</span><span class="dl">"</span><span class="p">;</span>
+<span class="k">import</span> <span class="nx">ReactDOM</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">react-dom</span><span class="dl">"</span><span class="p">;</span>
+<span class="k">import</span> <span class="nx">App</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">./App</span><span class="dl">"</span><span class="p">;</span>
+<span class="k">import</span> <span class="p">{</span> <span class="nx">RecoilRoot</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">recoil</span><span class="dl">"</span><span class="p">;</span>
+
+<span class="nx">ReactDOM</span><span class="p">.</span><span class="nx">render</span><span class="p">(</span>
+  <span class="o">&lt;</span><span class="nx">React</span><span class="p">.</span><span class="nx">StrictMode</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="nx">RecoilRoot</span><span class="o">&gt;</span>
+      <span class="o">&lt;</span><span class="nx">App</span> <span class="o">/&gt;</span>
+    <span class="o">&lt;</span><span class="sr">/RecoilRoot</span><span class="err">&gt;
+</span>  <span class="o">&lt;</span><span class="sr">/React.StrictMode</span><span class="err">&gt;
+</span>  <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="dl">'</span><span class="s1">root</span><span class="dl">'</span><span class="p">)</span>
+<span class="p">);</span>
+</pre></table></code></div></div><h3 id="-atom"><span class="mr-2">⚡ Atom</span><a href="#-atom" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3><ul><li>데이터 상태의 단위이며, 업데이트와 구독이 가능하다.<li>atom의 값이 바뀌면 구독하고 있는 컴포너트는 모두 새로운 값으로 리렌더링 된다.<li>atom은 key와 default값을 설정해 주어야 한다.<li><code class="language-plaintext highlighter-rouge">key</code>: 해당 atom을 식별하는데 필요한 고유한 문자열이며, 프로젝트 전체에서 다른 atom, selector에 대해 고유해야 한다.<li><code class="language-plaintext highlighter-rouge">default</code>: 초기값을 설정해준다.</ul><div class="language-javascript highlighter-rouge"><div class="code-header"> <span data-label-text="JavaScript"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+</pre><td class="rouge-code"><pre><span class="k">import</span> <span class="p">{</span> <span class="nx">atom</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">recoil</span><span class="dl">"</span><span class="p">;</span>
+
+<span class="k">export</span> <span class="kd">const</span> <span class="nx">countState</span> <span class="nx">atom</span><span class="p">({</span>
+    <span class="na">key</span><span class="p">:</span> <span class="dl">'</span><span class="s1">countState</span><span class="dl">'</span><span class="p">,</span>
+    <span class="na">default</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+<span class="p">});</span>
+</pre></table></code></div></div><h3 id="-selector"><span class="mr-2">⚡ Selector</span><a href="#-selector" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3><ul><li>atom에서는 불가능한 비동기 처리와 복잡한 로직을 구현할 수 있다.<li>selector는 세가지 값을 가진다.<li><code class="language-plaintext highlighter-rouge">key</code>: 해당 selector를 식별하는데 필요한 고유한 문자열이며, 프로제그 전체에서 다른 atom, selector에 대해 고유해야 한다.<li><code class="language-plaintext highlighter-rouge">get</code>: 파생된 상태를 반환하는 곳이며, get(countState) 처럼 countState를 get하고 있으면 countState가 바뀔 때마다 새로운 값을 리턴해준다. get()을 여러번 사용 가능하고 그중 하나라도 변하게 되면 리렌더링 된다.<li><code class="language-plaintext highlighter-rouge">set</code>: set 없이 get만 제공되면 selector는 read-only한 상태이지만 set을 제공하면 쓰기 가능한 상태를 반환한다.</ul><div class="language-javascript highlighter-rouge"><div class="code-header"> <span data-label-text="JavaScript"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+</pre><td class="rouge-code"><pre><span class="c1">// atoms.tsx</span>
+<span class="k">import</span> <span class="p">{</span> <span class="nx">atom</span><span class="p">,</span> <span class="nx">selector</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">recoil</span><span class="dl">"</span><span class="p">;</span>
+
+<span class="k">export</span> <span class="kd">const</span> <span class="nx">minuteState</span> <span class="nx">atom</span><span class="p">({</span>
+  <span class="na">key</span><span class="p">:</span> <span class="dl">"</span><span class="s2">minutes</span><span class="dl">"</span><span class="p">,</span>
+  <span class="na">default</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+<span class="p">});</span>
+
+<span class="k">export</span> <span class="kd">const</span> <span class="nx">hourSelector</span> <span class="nx">selector</span><span class="p">({</span>
+  <span class="na">key</span><span class="p">:</span> <span class="dl">"</span><span class="s2">hours</span><span class="dl">"</span><span class="p">,</span>
+  <span class="na">get</span><span class="p">:</span> <span class="p">({</span><span class="kd">get</span><span class="p">})</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="kd">const</span> <span class="nx">minutes</span> <span class="o">=</span> <span class="kd">get</span><span class="p">(</span><span class="nx">minuteState</span><span class="p">);</span>
+    <span class="k">return</span> <span class="nx">minutes</span> <span class="o">/</span> <span class="mi">60</span><span class="p">;</span>
+  <span class="p">},</span>
+  <span class="na">set</span><span class="p">:</span> <span class="p">({</span><span class="kd">set</span><span class="p">},</span> <span class="nx">newValue</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="kd">const</span> <span class="nx">minutes</span> <span class="o">=</span> <span class="nb">Number</span><span class="p">(</span><span class="nx">newValue</span><span class="p">)</span> <span class="o">*</span> <span class="mi">60</span><span class="p">;</span>
+    <span class="kd">set</span><span class="p">(</span><span class="nx">minuteState</span><span class="p">,</span> <span class="nx">minutes</span><span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">});</span>
+</pre></table></code></div></div><div class="language-javascript highlighter-rouge"><div class="code-header"> <span data-label-text="JavaScript"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+</pre><td class="rouge-code"><pre><span class="c1">// App.tsx</span>
+<span class="k">import</span> <span class="p">{</span> <span class="nx">useRecoilState</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">recoil</span><span class="dl">"</span><span class="p">;</span>
+<span class="k">import</span> <span class="p">{</span> <span class="nx">minuteState</span><span class="p">,</span> <span class="nx">hourSelector</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">./atoms</span><span class="dl">"</span><span class="p">;</span>
+
+<span class="kd">function</span> <span class="nx">App</span><span class="p">()</span> <span class="p">{</span>
+  <span class="kd">const</span> <span class="p">[</span><span class="nx">minutes</span><span class="p">,</span> <span class="nx">setMinutes</span><span class="p">]</span> <span class="o">=</span> <span class="nx">useRecoilState</span><span class="p">(</span><span class="nx">minuteState</span><span class="p">);</span>
+  <span class="kd">const</span> <span class="p">[</span><span class="nx">hours</span><span class="p">,</span> <span class="nx">setHours</span><span class="p">]</span> <span class="o">=</span> <span class="nx">useRecoilState</span><span class="p">(</span><span class="nx">hourSelector</span><span class="p">);</span>
+  <span class="kd">const</span> <span class="nx">onMinutesChange</span> <span class="o">=</span> <span class="p">(</span><span class="nx">event</span><span class="p">:</span> <span class="nx">React</span><span class="p">.</span><span class="nx">FormEvent</span><span class="o">&lt;</span><span class="nx">HTMLInputElement</span><span class="o">&gt;</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="nx">setMinutes</span><span class="p">(</span><span class="o">+</span><span class="nx">event</span><span class="p">.</span><span class="nx">currentTarget</span><span class="p">.</span><span class="nx">value</span><span class="p">);</span> <span class="c1">// number type +</span>
+  <span class="p">}</span>
+  <span class="kd">const</span> <span class="nx">onHoursChange</span> <span class="o">=</span> <span class="p">(</span><span class="nx">event</span><span class="p">:</span> <span class="nx">React</span><span class="p">.</span><span class="nx">FormEvent</span><span class="o">&lt;</span><span class="nx">HTMLInputElement</span><span class="o">&gt;</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="nx">setHours</span><span class="p">(</span><span class="o">+</span><span class="nx">event</span><span class="p">.</span><span class="nx">currentTarget</span><span class="p">.</span><span class="nx">value</span><span class="p">);</span>
+  <span class="p">}</span>
+  <span class="k">return</span> <span class="p">(</span>
+    <span class="o">&lt;&gt;</span>
+      <span class="o">&lt;</span><span class="nx">input</span> <span class="nx">value</span><span class="o">=</span><span class="p">{</span><span class="nx">minutes</span><span class="p">}</span> <span class="nx">onChange</span><span class="o">=</span><span class="p">{</span><span class="nx">onMinutesChange</span><span class="p">}</span> <span class="nx">type</span><span class="o">=</span><span class="dl">"</span><span class="s2">number</span><span class="dl">"</span> <span class="nx">placeholder</span><span class="o">=</span><span class="dl">"</span><span class="s2">Minutes</span><span class="dl">"</span> <span class="o">/&gt;</span>
+      <span class="o">&lt;</span><span class="nx">input</span> <span class="nx">value</span><span class="o">=</span><span class="p">{</span><span class="nx">hours</span><span class="p">}</span> <span class="nx">onChange</span><span class="o">=</span><span class="p">{</span><span class="nx">onHoursChange</span><span class="p">}</span> <span class="nx">type</span><span class="o">=</span><span class="dl">"</span><span class="s2">number</span><span class="dl">"</span> <span class="nx">placeholder</span><span class="o">=</span><span class="dl">"</span><span class="s2">Hours</span><span class="dl">"</span> <span class="o">/&gt;</span>
+    <span class="o">&lt;</span><span class="sr">/</span><span class="err">&gt;
+</span>  <span class="p">)</span>
+<span class="p">}</span>
+<span class="k">export</span> <span class="k">default</span> <span class="nx">App</span><span class="p">;</span>
+</pre></table></code></div></div><h3 id="-userecoilstate"><span class="mr-2">⚡ useRecoilState</span><a href="#-userecoilstate" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3><p>상태를 읽고 변경할 때 사용한다.</p><div class="language-javascript highlighter-rouge"><div class="code-header"> <span data-label-text="JavaScript"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+</pre><td class="rouge-code"><pre><span class="k">import</span> <span class="p">{</span> <span class="nx">atom</span><span class="p">,</span> <span class="nx">useRecoilState</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">recoil</span><span class="dl">"</span><span class="p">;</span>
+
+<span class="kd">const</span> <span class="nx">modeThemeAtom</span> <span class="o">=</span> <span class="nx">atom</span><span class="p">({</span>
+  <span class="na">key</span><span class="p">:</span> <span class="dl">"</span><span class="s2">modeTheme</span><span class="dl">"</span><span class="p">,</span>
+  <span class="na">default</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+<span class="p">})</span>
+
+<span class="kd">function</span> <span class="nx">App</span><span class="p">()</span> <span class="p">{</span>
+  <span class="kd">const</span> <span class="p">[</span><span class="nx">mode</span><span class="p">,</span> <span class="nx">setMode</span><span class="p">]</span> <span class="o">=</span> <span class="nx">useRecoilState</span><span class="p">(</span><span class="nx">modeThemeAtom</span><span class="p">);</span>
+  <span class="kd">const</span> <span class="nx">toggleModeAtom</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="nx">setMode</span><span class="p">(</span><span class="nx">prev</span> <span class="o">=&gt;</span> <span class="o">!</span><span class="nx">prev</span><span class="p">);</span>
+  <span class="k">return</span> <span class="p">(</span>
+    <span class="o">&lt;</span><span class="nx">button</span> <span class="nx">onClick</span><span class="o">=</span><span class="p">{</span><span class="nx">toggleModeAtom</span><span class="p">}</span><span class="o">&gt;</span><span class="nx">Mode</span> <span class="nx">Change</span><span class="o">&lt;</span><span class="sr">/button</span><span class="err">&gt;
+</span>  <span class="p">)</span>
+<span class="p">}</span>
+<span class="k">export</span> <span class="k">default</span> <span class="nx">App</span><span class="p">;</span>
+</pre></table></code></div></div><h3 id="-userecolivalue"><span class="mr-2">⚡ useRecoliValue</span><a href="#-userecolivalue" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3><p>컴포넌트에서 상태를 읽어오기만 하면될 때 사용한다.</p><div class="language-javascript highlighter-rouge"><div class="code-header"> <span data-label-text="JavaScript"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+</pre><td class="rouge-code"><pre><span class="k">import</span> <span class="p">{</span> <span class="nx">atom</span><span class="p">,</span> <span class="nx">useRecoilValue</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">recoil</span><span class="dl">"</span><span class="p">;</span>
+
+<span class="kd">const</span> <span class="nx">modeThemeAtom</span> <span class="o">=</span> <span class="nx">atom</span><span class="p">({</span>
+  <span class="na">key</span><span class="p">:</span> <span class="dl">"</span><span class="s2">modeTheme</span><span class="dl">"</span><span class="p">,</span>
+  <span class="na">dafault</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+<span class="p">})</span>
+
+<span class="kd">function</span> <span class="nx">App</span><span class="p">()</span> <span class="p">{</span>
+  <span class="kd">const</span> <span class="nx">modeTheme</span> <span class="o">=</span> <span class="nx">useRecoilValue</span><span class="p">(</span><span class="nx">modeThemeAtom</span><span class="p">);</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">isDark</span><span class="p">);</span>  <span class="c1">// true</span>
+  <span class="k">return</span> <span class="kc">null</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="k">export</span> <span class="k">default</span> <span class="nx">App</span><span class="p">;</span>
+</pre></table></code></div></div><h3 id="-usesetrecoilstate"><span class="mr-2">⚡ useSetRecoilState</span><a href="#-usesetrecoilstate" class="anchor text-muted"><i class="fas fa-hashtag"></i></a></h3><p>상태를 변경할 때 사용한다.</p><div class="language-javascript highlighter-rouge"><div class="code-header"> <span data-label-text="JavaScript"><i class="fas fa-code small"></i></span> <button aria-label="copy" data-title-succeed="Copied!"><i class="far fa-clipboard"></i></button></div><div class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+</pre><td class="rouge-code"><pre><span class="k">import</span> <span class="p">{</span> <span class="nx">atom</span><span class="p">,</span> <span class="nx">useSetRecoilState</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">recoil</span><span class="dl">"</span><span class="p">;</span>
+
+<span class="kd">const</span> <span class="nx">modeThemeAtom</span> <span class="o">=</span> <span class="nx">atom</span><span class="p">({</span>
+  <span class="na">key</span><span class="p">:</span> <span class="dl">"</span><span class="s2">modeTheme</span><span class="dl">"</span><span class="p">,</span>
+  <span class="na">dafault</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+<span class="p">})</span>
+
+<span class="kd">function</span> <span class="nx">App</span><span class="p">()</span> <span class="p">{</span>
+  <span class="kd">const</span> <span class="nx">setMode</span> <span class="o">=</span> <span class="nx">useSetRecoilState</span><span class="p">(</span><span class="nx">modeThemeAtom</span><span class="p">);</span>
+  <span class="kd">const</span> <span class="nx">toggleModeAtom</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="nx">setMode</span><span class="p">(</span><span class="nx">prev</span> <span class="o">=&gt;</span> <span class="o">!</span><span class="nx">prev</span><span class="p">);</span>
+  <span class="k">return</span> <span class="o">&lt;</span><span class="nx">button</span> <span class="nx">onClick</span><span class="o">=</span><span class="p">{</span><span class="nx">toggleModeAtom</span><span class="p">}</span><span class="o">&gt;</span><span class="nx">Mode</span> <span class="nx">Change</span><span class="o">&lt;</span><span class="sr">/button</span><span class="err">&gt;
+</span><span class="p">}</span>
+<span class="k">export</span> <span class="k">default</span> <span class="nx">App</span><span class="p">;</span>
+</pre></table></code></div></div></div><div class="post-tail-wrapper text-muted"><div class="post-meta mb-3"> <i class="far fa-folder-open fa-fw mr-1"></i> <a href='/eehosmik.github.io//categories/react/'>React</a></div><div class="post-tags"> <i class="fa fa-tags fa-fw mr-1"></i> <a href="/eehosmik.github.io//tags/react/" class="post-tag no-text-decoration" >react</a> <a href="/eehosmik.github.io//tags/recoil/" class="post-tag no-text-decoration" >recoil</a> <a href="/eehosmik.github.io//tags/atom/" class="post-tag no-text-decoration" >atom</a> <a href="/eehosmik.github.io//tags/selector/" class="post-tag no-text-decoration" >selector</a> <a href="/eehosmik.github.io//tags/userecoilstate/" class="post-tag no-text-decoration" >useRecoilState</a> <a href="/eehosmik.github.io//tags/userecoilvalue/" class="post-tag no-text-decoration" >useRecoilValue</a> <a href="/eehosmik.github.io//tags/usesetrecoilstate/" class="post-tag no-text-decoration" >useSetRecoilState</a></div><div class="post-tail-bottom d-flex justify-content-between align-items-center mt-3 pt-5 pb-2"><div class="license-wrapper"> This post is licensed under <a href="https://creativecommons.org/licenses/by/4.0/"> CC BY 4.0 </a> by the author.</div><div class="share-wrapper"> <span class="share-label text-muted mr-1">Share</span> <span class="share-icons"> <a href="https://twitter.com/intent/tweet?text=%5BReact%5D+Recoil+-+Hey&url=https%3A%2F%2Fiamssok.github.io%2Feehosmik.github.io%2F%2Feehosmik.github.io%2Fposts%2Freact-recoil%2F" data-toggle="tooltip" data-placement="top" title="Twitter" target="_blank" rel="noopener" aria-label="Twitter"> <i class="fa-fw fab fa-twitter"></i> </a> <a href="https://www.facebook.com/sharer/sharer.php?title=%5BReact%5D+Recoil+-+Hey&u=https%3A%2F%2Fiamssok.github.io%2Feehosmik.github.io%2F%2Feehosmik.github.io%2Fposts%2Freact-recoil%2F" data-toggle="tooltip" data-placement="top" title="Facebook" target="_blank" rel="noopener" aria-label="Facebook"> <i class="fa-fw fab fa-facebook-square"></i> </a> <a href="https://t.me/share/url?url=https%3A%2F%2Fiamssok.github.io%2Feehosmik.github.io%2F%2Feehosmik.github.io%2Fposts%2Freact-recoil%2F&text=%5BReact%5D+Recoil+-+Hey" data-toggle="tooltip" data-placement="top" title="Telegram" target="_blank" rel="noopener" aria-label="Telegram"> <i class="fa-fw fab fa-telegram"></i> </a> <i id="copy-link" class="fa-fw fas fa-link small" data-toggle="tooltip" data-placement="top" title="Copy link" data-title-succeed="Link copied successfully!"> </i> </span></div></div></div></div></div><div id="panel-wrapper" class="col-xl-3 pl-2 text-muted"><div class="access"><div id="access-lastmod" class="post"><div class="panel-heading">Recently Updated</div><ul class="post-content pl-0 pb-1 ml-1 mt-2"><li><a href="/eehosmik.github.io/posts/2024-02-06-react-state/"></a><li><a href="/eehosmik.github.io/posts/react-recoil/">[React] Recoil</a><li><a href="/eehosmik.github.io/posts/react-query/">[React] React-Query</a><li><a href="/eehosmik.github.io/posts/react-hook-form/">[React] React-Hook-Form</a><li><a href="/eehosmik.github.io/posts/react-router/">[React] React-Router-Dom</a></ul></div><div id="access-tags"><div class="panel-heading">Trending Tags</div><div class="d-flex flex-wrap mt-3 mb-1 mr-3"> <a class="post-tag" href="/eehosmik.github.io/tags/react/">react</a> <a class="post-tag" href="/eehosmik.github.io/tags/react-router-dom/">react-router-dom</a> <a class="post-tag" href="/eehosmik.github.io/tags/atom/">atom</a> <a class="post-tag" href="/eehosmik.github.io/tags/es6/">es6</a> <a class="post-tag" href="/eehosmik.github.io/tags/favicon/">favicon</a> <a class="post-tag" href="/eehosmik.github.io/tags/getting-started/">getting started</a> <a class="post-tag" href="/eehosmik.github.io/tags/google-analytics/">google analytics</a> <a class="post-tag" href="/eehosmik.github.io/tags/javascript/">javascript</a> <a class="post-tag" href="/eehosmik.github.io/tags/pageviews/">pageviews</a> <a class="post-tag" href="/eehosmik.github.io/tags/props/">props</a></div></div></div><script src="https://cdn.jsdelivr.net/gh/afeld/bootstrap-toc@1.0.1/dist/bootstrap-toc.min.js"></script><div id="toc-wrapper" class="pl-0 pr-4 mb-5"><div class="panel-heading pl-3 pt-2 mb-2">Contents</div><nav id="toc" data-toggle="toc"></nav></div></div></div><div class="row"><div id="tail-wrapper" class="col-12 col-lg-11 col-xl-9 pl-3 pr-3 pr-xl-4"><div id="related-posts" class="mb-2 mb-sm-4"><h3 class="pt-2 mb-4 ml-1" data-toc-skip>Further Reading</h3><div class="card-deck mb-4"><div class="card"> <a href="/eehosmik.github.io/posts/react-props/"><div class="card-body"> <em class="small" data-ts="1707318000" data-df="ll" > Feb 8, 2024 </em><h3 class="pt-0 mt-1 mb-3" data-toc-skip>[React] Props</h3><div class="text-muted small"><p> ✨ Props 컴포넌트에 데이터를 전달하고자 할 때 사용하며, 이렇게 전달된 값은 변수를 통해 참조할 수 있다. React에서 데이터의 흐름은 부모 컴포넌트에서 자식 컴포넌트로 전달되므로, props의 값은 해당 컴포넌트를 불러와 사용하는 부모 컴포넌트에서 설정할 수 있다. import { useState } from &quot;react&quot;; ...</p></div></div></a></div><div class="card"> <a href="/eehosmik.github.io/posts/react-useEffect/"><div class="card-body"> <em class="small" data-ts="1707404400" data-df="ll" > Feb 9, 2024 </em><h3 class="pt-0 mt-1 mb-3" data-toc-skip>[React] useEffect</h3><div class="text-muted small"><p> ✨ useEffect 컴포넌트가 렌더링 될 때마다 특정 작업을 실행한다. function: 해당 값이 업데이트 될 때 수행하고자 하는 함수 deps: 배열 형태이며, 검사하고자 하는 특정값 또는 빈 배열 useEffect(function, [dependencies?]) import { useState, useEffect } ...</p></div></div></a></div><div class="card"> <a href="/eehosmik.github.io/posts/react-router/"><div class="card-body"> <em class="small" data-ts="1707836400" data-df="ll" > Feb 14, 2024 </em><h3 class="pt-0 mt-1 mb-3" data-toc-skip>[React] React-Router-Dom</h3><div class="text-muted small"><p> ✨ React-Router-Dom SPA 방식의 리액트에서 각각의 Route(경로)에 따라 선택된 페이지를 렌더링 해주는 라이브러리 SPA(Single Page Application)은 서버에서 필요한 데이터만 비동기로 받아와서 현재 화면에 다시 렌더링 하는 방식이다. 웹 페이지를 로딩하더라도 최신 업데이트를 신속하게 반영하면서 페이지 로딩 ...</p></div></div></a></div></div></div><div class="post-navigation d-flex justify-content-between"> <a href="/eehosmik.github.io//posts/react-query/" class="btn btn-outline-primary" prompt="Older"><p>[React] React-Query</p></a> <a href="/eehosmik.github.io//posts/react-hook-form/" class="btn btn-outline-primary" prompt="Newer"><p>[React] React-Hook-Form</p></a></div></div></div><footer class="row pl-3 pr-3"><div class="col-12 d-flex justify-content-between align-items-center text-muted pl-0 pr-0"><div class="footer-left"><p class="mb-0"> © 2024 <a href="https://github.com/iamssok">Kimsohee</a>. <span data-toggle="tooltip" data-placement="top" title="Except where otherwise noted, the blog posts on this site are licensed under the Creative Commons Attribution 4.0 International (CC BY 4.0) License by the author.">Some rights reserved.</span></p></div><div class="footer-right"><p class="mb-0"> Powered by <a href="https://jekyllrb.com" target="_blank" rel="noopener">Jekyll</a> with <a href="https://github.com/cotes2020/jekyll-theme-chirpy" target="_blank" rel="noopener">Chirpy</a> theme.</p></div></div></footer></div><div id="search-result-wrapper" class="d-flex justify-content-center unloaded"><div class="col-12 col-sm-11 post-content"><div id="search-hints"><div id="access-tags"><div class="panel-heading">Trending Tags</div><div class="d-flex flex-wrap mt-3 mb-1 mr-3"> <a class="post-tag" href="/eehosmik.github.io/tags/react/">react</a> <a class="post-tag" href="/eehosmik.github.io/tags/react-router-dom/">react-router-dom</a> <a class="post-tag" href="/eehosmik.github.io/tags/atom/">atom</a> <a class="post-tag" href="/eehosmik.github.io/tags/es6/">es6</a> <a class="post-tag" href="/eehosmik.github.io/tags/favicon/">favicon</a> <a class="post-tag" href="/eehosmik.github.io/tags/getting-started/">getting started</a> <a class="post-tag" href="/eehosmik.github.io/tags/google-analytics/">google analytics</a> <a class="post-tag" href="/eehosmik.github.io/tags/javascript/">javascript</a> <a class="post-tag" href="/eehosmik.github.io/tags/pageviews/">pageviews</a> <a class="post-tag" href="/eehosmik.github.io/tags/props/">props</a></div></div></div><div id="search-results" class="d-flex flex-wrap justify-content-center text-muted mt-3"></div></div></div></div><div id="mask"></div><a id="back-to-top" href="#" aria-label="back-to-top" class="btn btn-lg btn-box-shadow" role="button"> <i class="fas fa-angle-up"></i> </a><div id="notification" class="toast" role="alert" aria-live="assertive" aria-atomic="true" data-animation="true" data-autohide="false"><div class="toast-header"> <button type="button" class="ml-2 ml-auto close" data-dismiss="toast" aria-label="Close"> <span aria-hidden="true">&times;</span> </button></div><div class="toast-body text-center pt-0"><p class="pl-2 pr-2 mb-3">A new version of content is available.</p><button type="button" class="btn btn-primary" aria-label="Update"> Update </button></div></div><script src="https://cdn.jsdelivr.net/npm/simple-jekyll-search@1.10.0/dest/simple-jekyll-search.min.js"></script> <script> SimpleJekyllSearch({ searchInput: document.getElementById('search-input'), resultsContainer: document.getElementById('search-results'), json: '/eehosmik.github.io/assets/js/data/search.json', searchResultTemplate: '<div class="pl-1 pr-1 pl-sm-2 pr-sm-2 pl-lg-4 pr-lg-4 pl-xl-0 pr-xl-0"> <a href="{url}">{title}</a><div class="post-meta d-flex flex-column flex-sm-row text-muted mt-1 mb-1"> {categories} {tags}</div><p>{snippet}</p></div>', noResultsText: '<p class="mt-5">Oops! No results found.</p>', templateMiddleware: function(prop, value, template) { if (prop === 'categories') { if (value === '') { return `${value}`; } else { return `<div class="mr-sm-4"><i class="far fa-folder fa-fw"></i>${value}</div>`; } } if (prop === 'tags') { if (value === '') { return `${value}`; } else { return `<div><i class="fa fa-tag fa-fw"></i>${value}</div>`; } } } }); </script> <script src="https://cdn.jsdelivr.net/combine/npm/magnific-popup@1/dist/jquery.magnific-popup.min.js,npm/lozad/dist/lozad.min.js,npm/clipboard@2/dist/clipboard.min.js"></script> <script src="https://cdn.jsdelivr.net/combine/npm/dayjs@1/dayjs.min.js,npm/dayjs@1/locale/ko.min.js,npm/dayjs@1/plugin/relativeTime.min.js,npm/dayjs@1/plugin/localizedFormat.min.js"></script> <script defer src="/eehosmik.github.io/assets/js/dist/post.min.js"></script> <script src="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/js/bootstrap.bundle.min.js"></script> <script defer src="/eehosmik.github.io/app.js"></script>

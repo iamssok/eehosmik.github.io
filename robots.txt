@@ -1,0 +1,5 @@
+User-agent: *
+
+Disallow: /norobots/
+
+Sitemap: https://iamssok.github.io/eehosmik.github.io//eehosmik.github.io/sitemap.xml
